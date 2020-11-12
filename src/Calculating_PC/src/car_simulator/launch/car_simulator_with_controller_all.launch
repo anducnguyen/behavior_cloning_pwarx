@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<launch>
+
+<arg name = "rviz_file" default = "/home/arun/Desktop/an_ws/NUMiniAutoCar/RC_car_ROS_MoCap/Calculating_PC/rviz/rviz.rviz" />
+
+	<include file="$(find car_simulator)/launch/car_simulator_with_controller.launch">
+	<arg name="speed_ref" default="0.5"/>
+	  <arg name = "initial_x" value = "0.0"/>
+	  <arg name = "initial_y" value = "1.5"/>
+	  <arg name = "initial_yaw" value = "-1.57"/>
+	  <arg name = "car_id" value = "000"/>
+	  <arg name="Flag_speed_ref_update" value = "false"/>
+	  <arg name="output_csv_folder" default="/home/arun/log/sim/car000"/>
+	</include>
+	
+	<include file="$(find car_simulator)/launch/car_simulator_with_controller.launch">
+	<arg name="speed_ref" default="1.0"/>
+	  <arg name = "initial_x" value = "0.0"/>
+	  <arg name = "initial_y" value = "3.5"/>
+	  <arg name = "initial_yaw" value = "-1.57"/>
+	  <arg name = "car_id" value = "001"/>
+	  <arg name="Flag_speed_ref_update" value = "true"/>
+	  <arg name="output_csv_folder" default="/home/arun/log/sim/car001"/>
+	</include>
+
+	<node pkg="rviz" type="rviz" name="rviz" args="-d $(arg rviz_file)"/>
+	
+</launch>

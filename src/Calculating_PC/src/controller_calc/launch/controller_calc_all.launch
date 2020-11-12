@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<launch>
+	<include file="$(find manual_controller)/launch/controller_calc_manual.launch">
+		<arg name="imu_topic" default="imu/data"/>
+		<arg name="current_pose_topic" default="/vrpn_client_node/RigidBody001/pose"/>
+		<arg name="motor_signal_topic" default="motor_signal001"/>
+		<arg name="control_cmd_topic" default="control_signal001"/>
+		<arg name="filtered_imu_topic" default="imu/data_filtered"/>
+		<arg name="curr_speed_topic" default="curr_speed"/>
+		<arg name="speed_ref_topic" default="speed_ref"/>
+		<arg name="path_ref_topic" default="path_ref"/>
+		<arg name="path_car_topic" default="path_car"/>
+		<arg name="path_file" default="/home/arun/Desktop/an_ws/test_cacc/src/Calculating_PC/src/controller_calc/Path_Info/Test2.csv"/>
+		<arg name="path_to_write_path" default="/home/arun/Desktop/an_ws/test_cacc/src/Calculating_PC/src/controller_calc/Path_Info/Test_resampled_path2.csv"/>
+		<arg name="output_lane_for_debug" default="/home/arun/Desktop/an_ws/test_cacc/src/Calculating_PC/src/controller_calc/Path_Info/Test_detailed_path2.csv"/>
+		<arg name="output_csv_folder" default="/home/arun/Desktop/an_ws/log/rccar/car000"/>
+		<arg name="Flag_csv_output" default="true"/>
+		<arg name="Flag_control_start" default="true"/>
+		<arg name="Flag_speed_ref_update" default="false"/>
+		<arg name="Flag_y_shift" default="true"/>
+		<arg name="speed_ref" default="1.5"/>
+		<arg name="y_offset" default="0.0"/>
+		<arg name="THW" default="0.2"/>
+		<arg name="car_id" default="000"/>
+	</include>
+
+	<include file="$(find controller_calc)/launch/controller_calc_indiv.launch">
+		<arg name="imu_topic" default="imu/data"/>
+		<arg name="current_pose_topic" default="/vrpn_client_node/RigidBody002/pose"/>
+		<arg name="motor_signal_topic" default="motor_signal002"/>
+		<arg name="control_cmd_topic" default="control_signal002"/>
+		<arg name="filtered_imu_topic" default="imu/data_filtered"/>
+		<arg name="curr_speed_topic" default="curr_speed"/>
+		<arg name="speed_ref_topic" default="speed_ref"/>
+		<arg name="path_ref_topic" default="path_ref"/>
+		<arg name="path_car_topic" default="path_car"/>
+		<arg name="path_file" default="/home/arun/Desktop/an_ws/test_cacc/src/Calculating_PC/src/controller_calc/Path_Info/Test2.csv"/>
+		<arg name="path_to_write_path" default="/home/arun/Desktop/an_ws/test_cacc/src/Calculating_PC/src/controller_calc/Path_Info/Test_resampled_path2.csv"/>
+		<arg name="output_lane_for_debug" default="/home/arun/Desktop/an_ws/test_cacc/src/Calculating_PC/src/controller_calc/Path_Info/Test_detailed_path2.csv"/>
+		<arg name="output_csv_folder" default="/home/arun/Desktop/an_ws/log/rccar/car001"/>
+		<arg name="Flag_csv_output" default="true"/>
+		<arg name="Flag_control_start" default="true"/>
+		<arg name="Flag_speed_ref_update" default="true"/>
+		<arg name="Flag_y_shift" default="true"/>
+		<arg name="speed_ref" default="1.5"/>
+		<arg name="y_offset" default="0.0"/>
+		<arg name="THW" default="0.2"/>
+		<arg name="car_id" default="001"/>
+	</include>
+</launch>

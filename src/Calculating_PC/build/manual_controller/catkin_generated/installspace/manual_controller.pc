@@ -1,0 +1,8 @@
+prefix=/home/arun/Desktop/an_ws/test_cacc/src/Calculating_PC/install
+
+Name: manual_controller
+Description: Description of manual_controller
+Version: 0.0.0
+Cflags: -I${prefix}/include
+Libs: -L${prefix}/lib 
+Requires: 
